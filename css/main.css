@@ -1,0 +1,172 @@
+/*****************************************
+BIG SCREENS
+******************************************/
+
+/*****************************************
+General
+******************************************/
+ .row {
+ 	width: 100%;
+}
+
+ .container {
+	max-width: 1200px;
+	margin: 0 auto;
+	overflow: auto;
+	padding: 150px 0;
+}
+
+ #wrapper {
+ 	width: 100%;
+}
+
+body {
+	font-family: 'Lato', sans-serif;
+	line-height: 2em;
+	color: #424242;
+}
+
+a {
+	text-decoration: none;
+}
+
+/*****************************************
+Header
+******************************************/
+header {
+	width: 100%;
+	text-transform: uppercase;
+}
+
+nav {
+	float: right;
+	width: 45%;
+	margin-right: 5%;
+	text-align: right;
+	margin-top: 30px;
+}
+
+nav ul {
+	list-style: none;
+}
+
+nav li {
+	display: inline-block;
+}
+
+nav a {
+	font-size: 1.3em;
+  font-weight: 900;
+  padding: 10px;
+  color: #fff;
+  border-radius: 5%;
+}
+
+nav a:visited, nav a.active {
+	color: #fff;
+}
+
+
+nav a.active {
+	background-color: #199785;
+}
+
+nav a:hover {
+  color: #199785;
+}
+
+nav a.active:hover {
+	color: #fff;
+}
+
+#logo {
+	font-family: 'Lobster', cursive;
+	font-weight: bold;
+	color: #fff;
+	float: left;
+	width: 45%;
+	margin-top: 30px;
+	margin-left: 5%;
+	font-size: 2.5em;
+}
+
+/*****************************************
+Home
+******************************************/
+#home {
+	padding: 300px 0;
+	background-color: #000;
+	background-image: url(../img/dark-mosaic.png);
+}
+
+#intro {
+	text-align: center;
+}
+
+/*****************************************
+Portfolio
+******************************************/
+.projects {
+	border-bottom: 1px solid #dddddd;
+}
+
+.thumbnail {
+	width: 55%;
+	float: left;
+	clear: right;
+}
+
+.projectDescription {
+	width: 45%;
+	float: right;
+	font-size: 1.5em;
+}
+
+.caption {
+	font-size: 2em;
+	margin-bottom: 30px;
+	font-weight: 900;
+	color: #199785;
+}
+
+.caption:hover {
+	color: #14786A;
+}
+
+/*****************************************
+About
+******************************************/
+#profile-photo {
+	width: 25%;
+	float: left;
+	border-radius: 100%;
+}
+
+#about p {
+	width: 70%;
+	float: right;
+	font-size: 1.5em;
+}
+
+#mapDiv {
+	width: 100%;
+	height: 575px;
+}
+
+/*****************************************
+Footer
+******************************************/
+footer {
+	text-align: center;
+	color: #fff;
+	width: 100%;
+	background-color: #464646;
+  background-image: url(../img/dark-mosaic.png);
+  padding: 15px 0 5px;
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  padding: 0 10px;
+}

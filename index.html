@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app="mainApp">
+	<head>
+		<meta charset="utf-8">
+    <title>Ryan Tang | Web Developer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+	</head>
+	<body ng-controller="mainController">
+		<header>
+			<a href="#/" id="logo">
+	      <h1>RT</h1>
+	    </a>
+			<nav>
+				<ul>
+					<li><a href="#/" ng-class="{active: $route.current.activeTab == 'home'}">Home</a></li>
+          <li><a href="#/portfolio" scroll-to-item scroll-to="#portfolio" ng-class="{active: $route.current.activeTab == 'portfolio'}">Portfolio</a></li>
+          <li><a href="#/about" scroll-to-item scroll-to="#about" ng-class="{active: $route.current.activeTab == 'about'}">About</a></li>
+          <li><a href="#/contact" scroll-to-item scroll-to="#contact" ng-class="{active: $route.current.activeTab == 'contact'}">Contact</a></li>
+				</ul>
+			</nav>
+		</header>
+		<div id="wrapper">
+			<div id="home">
+				<div id="intro">
+					<p>Hi and welcome to my portfolio</p>
+				</div>
+			</div>
+			<div id="portfolio" ng-controller="portfolioController">
+				<ul id="gallery">
+		    		<li ng-repeat="project in projects" class="row">
+		    			<div class="container projects">
+			        	<img class="thumbnail" ng-src="{{project.imageLoc}}" alt="">
+			        	<a ng-href="{{project.link}}"><h3 class="caption">{{project.title}}</h3></a>
+			        	<p class="projectDescription">{{project.description}}</p>
+			        </div>
+		    		</li>
+				</ul>
+			</div>
+			<div id="about" class="row" ng-controller="aboutController">
+				<div class="container">
+					<img ng-src="{{about.imageLoc}}" alt="Photograph of Ryan Tang" id="profile-photo">
+					<p>{{about.paragraph}}</p>
+				</div>
+				<div id="map">
+      		<div id="mapDiv"></div>
+      	</div>
+			</div>
+			<div id="contact">
+			</div>
+		</div>
+		<footer>
+			<a target="_blank" href="http://facebook.com/ryan.tang.91"><img src="img/facebook-white.png" alt="Facebook Logo" class="social-icon"></a>
+      <a target="_blank" href="https://ca.linkedin.com/in/ryantang1"><img src="img/linkedin.png" alt="Linkedin Logo" class="social-icon"></a>
+      <p>&copy; 2015 Ryan Tang.</p>
+		</footer>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.min.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
+    <script src="js/lib/jquery.min.js"></script>
+    <script src="js/app.js"></script>
+	</body>
+</html>
