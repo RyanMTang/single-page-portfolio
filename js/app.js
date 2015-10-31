@@ -21,14 +21,15 @@ mainApp.config(function($routeProvider) {
 
 });
 
-
-
-mainApp.controller('mainController', function($scope, $route, $location, $anchorScroll, $routeParams) {
-  $scope.$route = $route;
-  $scope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
+mainApp.run(function($rootScope, $location, $anchorScroll, $routeParams) {
+  $rootScope.$on('$routeChangeSuccess', function() {
     $location.hash($routeParams.scrollTo);
-    $anchorScroll(); 
+    $anchorScroll();  
   });
+});
+
+mainApp.controller('mainController', function($scope, $route) {
+  $scope.$route = $route;
 });
 
 mainApp.controller('portfolioController', function($scope){
