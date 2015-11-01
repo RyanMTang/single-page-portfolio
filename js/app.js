@@ -21,11 +21,26 @@ mainApp.config(function($routeProvider) {
 
 });
 
-mainApp.run(function($rootScope, $location, $anchorScroll, $routeParams) {
-  $rootScope.$on('$routeChangeSuccess', function() {
-    $location.hash($routeParams.scrollTo);
-    $anchorScroll();  
+mainApp.run(function($rootScope, $location, $anchorScroll) {
+  $location.path('/');
+  $location.hash('home');
+  $rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
+    if($location.hash()) $anchorScroll();  
   });
+});
+
+mainApp.directive("scroll", function ($window) {
+  var home = document.getElementById('home');
+  var portfolio = document.getElementById('portfolio');
+    return function(scope, element, attrs) {
+        angular.element($window).bind("scroll", function() {
+             if (portfolio.offsetTop>this.pageYOffset >= home.offsetTop) {
+                 $window.location.hash = "/#home"
+                 console.log($window.location.hash)
+             }
+            scope.$apply();
+        });
+    };
 });
 
 mainApp.controller('mainController', function($scope, $route) {
@@ -81,7 +96,7 @@ mainApp.controller('aboutController', function($scope) {
     'mapHeading': "Places I've Worked and Lived"
   }
 
-  var styleArray = [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#badfda"},{"visibility":"on"}]}];
+  var styleArray = [{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffffff"},{"lightness":0},{"saturation":-97}]}];
 
   var mapOptions = {
     scrollwheel: false,
