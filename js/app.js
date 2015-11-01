@@ -20,30 +20,36 @@ mainApp.config(function($routeProvider) {
   });
 
 });
+ 
+mainApp.directive('scrollToItem', function($route, $location) {                                                      
+  return {                                                                                 
+      restrict: 'A',                                                                       
+      scope: {                                                                             
+          scrollTo: "@"                                                                    
+      },                                                                                   
+      link: function(scope, $elm,attr) {                                                   
 
-mainApp.run(function($rootScope, $location, $anchorScroll) {
-  $location.path('/');
-  $location.hash('home');
-  $rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
-    if($location.hash()) $anchorScroll();  
-  });
-});
+          $elm.on('click', function() {                                                    
+              $('body').animate({scrollTop: $(scope.scrollTo).offset().top }, "slow");
+          });                                                                              
+      }                                                                                    
+  };
+});  
 
 mainApp.directive("scroll", function ($window) {
-  var home = document.getElementById('home');
-  var portfolio = document.getElementById('portfolio');
-    return function(scope, element, attrs) {
-        angular.element($window).bind("scroll", function() {
-             if (portfolio.offsetTop>this.pageYOffset >= home.offsetTop) {
-                 $window.location.hash = "/#home"
-                 console.log($window.location.hash)
-             }
-            scope.$apply();
-        });
-    };
-});
+  return function(scope, element, attrs) {
+    angular.element($window).bind("scroll", function() {
+      if (this.pageYOffset >= 200) {
+        $window.location.hash = '/';
+      } else {
+          scope.boolChangeClass = false;
+        }
+      scope.$apply();
+    });
+  };
+}); 
 
-mainApp.controller('mainController', function($scope, $route) {
+mainApp.controller('mainController', function($scope, $route, $location) {
   $scope.$route = $route;
 });
 

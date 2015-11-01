@@ -33,6 +33,12 @@ a {
 .current {
 	background-color: #000;
 }
+
+#toTop {
+	width: 20px;
+	height: 20px;
+	border: 2px solid black;
+}
 /*****************************************
 Header
 ******************************************/

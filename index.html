@@ -14,12 +14,12 @@
 			<a href="#/" id="logo">
 	      <h1>RT</h1>
 	    </a>
-			<nav>
+			<nav scroll>
 				<ul>
-					<li><a href="#/#home" ng-class="{active: $route.current.activeTab == 'home'}">Home</a></li>
-          <li><a href="#/portfolio#portfolio" ng-class="{active: $route.current.activeTab == 'portfolio'}">Portfolio</a></li>
-          <li><a href="#/about#about" ng-class="{active: $route.current.activeTab == 'about'}">About</a></li>
-          <li><a href="#/contact#contact" ng-class="{active: $route.current.activeTab == 'contact'}">Contact</a></li>
+					<li><a href="#/" ng-class="{active: $route.current.activeTab == 'home'}">Home</a></li>
+          <li><a href="#/portfolio" scroll-to-item scroll-to="#portfolio" ng-class="{active: $route.current.activeTab == 'portfolio'}">Portfolio</a></li>
+          <li><a href="#/about" scroll-to-item scroll-to="#about" ng-class="{active: $route.current.activeTab == 'about'}">About</a></li>
+          <li><a href="#/contact" scroll-to-item scroll-to="#contact" ng-class="{active: $route.current.activeTab == 'contact'}">Contact</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -52,6 +52,7 @@
 			<div id="contact" class="row">
 				<div class="container">
 					<div id="businessCard"></div>
+					<div id="toTop" scroll-to-item scroll-to="#home"></div>
 				</div>
 			</div>
 		</div>
