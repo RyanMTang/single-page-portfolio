@@ -37,13 +37,29 @@ mainApp.directive('scrollToItem', function($route, $location) {
 });  
 
 mainApp.directive("scroll", function ($window) {
+  var home = document.getElementById('home');
+  var portfolio = document.getElementById('portfolio');
+  var about = document.getElementById('about');
+  var contact = document.getElementById('contact');
+  var toTop = document.getElementById('toTop');
   return function(scope, element, attrs) {
     angular.element($window).bind("scroll", function() {
-      if (this.pageYOffset >= 200) {
+      if (this.pageYOffset <= home.offsetTop+2) {
         $window.location.hash = '/';
-      } else {
-          scope.boolChangeClass = false;
-        }
+      }
+      if (this.pageYOffset <= portfolio.offsetTop) {
+        toTop.style.display = 'none';
+      }
+      if (this.pageYOffset >= portfolio.offsetTop) {
+        $window.location.hash = '/portfolio';
+        toTop.style.display = 'block';
+      }
+      if (this.pageYOffset >= about.offsetTop) {
+        $window.location.hash = '/about';
+      }
+      if (this.pageYOffset >= contact.offsetTop) {
+        $window.location.hash = '/contact';
+      }
       scope.$apply();
     });
   };
