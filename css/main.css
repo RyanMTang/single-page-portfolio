@@ -27,10 +27,6 @@ a {
 	text-decoration: none;
 }
 
-.current {
-	background-color: #000;
-}
-
 /*****************************************
 Header
 ******************************************/
@@ -70,32 +66,38 @@ nav a:visited, nav a.active {
 
 
 nav a.active {
-	background-color: #199785;
+	background-color: rgba(214,43,43,0.7);
 }
 
 nav a:hover {
-  color: #199785;
+  color: rgba(214,43,43,0.7);;
 }
 
 nav a.active:hover {
 	color: #fff;
 }
 
-#logo {
-	font-family: 'Lato', cursive;
-	font-weight: bold;
-	color: #fff;
+.logo {
 	float: left;
 	width: 45%;
-	margin-top: 30px;
+	margin-top: 20px;
 	margin-left: 5%;
+}
+
+.logo a {
+	border-bottom: 5px solid black;
+	padding: 0px 5px 5px;
+}
+
+.logo h1 {
+	font-family: 'Lato', cursive;
+	display: inline-block;
+	font-weight: bold;
 	font-size: 2.5em;
 }
 
-#logo h1 {
-	display: inline-block;
-	border-bottom: 5px solid black;
-	padding-bottom: 10px;
+.R {
+	color: #fff;
 }
 
 /*****************************************
@@ -149,11 +151,11 @@ Portfolio
 	font-size: 2em;
 	margin-bottom: 30px;
 	font-weight: 900;
-	color: #da4040;
+	color: #6e6e6e;
 }
 
 .caption:hover {
-	color: #E16666;
+	color: #8b8b8b;
 }
 
 #skillsList{
@@ -163,7 +165,7 @@ Portfolio
 #skills {
 	display: inline-block;
 	font-size: 1.5em;
-	background-color: #199785;
+	background-color: rgba(214,43,43,0.7);
 	padding: 5px 10px;
 	margin-right: 5px;
 	margin-bottom: 5px;
@@ -194,13 +196,6 @@ About
 /*****************************************
 Contact
 ******************************************/
-#businessCard {
-	width: 60%;
-	height: 400px;
-	border: 1px solid #dddddd;
-	margin: 0 auto;
-	background-color: #ddd;
-}
 
 /*****************************************
 Footer
@@ -209,7 +204,7 @@ footer {
 	text-align: center;
 	color: #fff;
 	width: 100%;
-	background-color: #464646;
+	background-color: #0b0b0b;
   background-image: url(../img/dark-mosaic.png);
   padding: 15px 0 5px;
 }
@@ -239,20 +234,6 @@ BIG SCREENS
 
 	#wrapper {
 	 	width: 100%;
-	}
-
-	body {
-		font-family: 'Lato', sans-serif;
-		line-height: 2em;
-		color: #424242;
-	}
-
-	a {
-		text-decoration: none;
-	}
-
-	.current {
-		background-color: #000;
 	}
 
 	#toTop {
@@ -302,23 +283,6 @@ BIG SCREENS
 	  border-radius: 5%;
 	}
 
-	nav a:visited, nav a.active {
-		color: #fff;
-	}
-
-
-	nav a.active {
-		background-color: #199785;
-	}
-
-	nav a:hover {
-	  color: #199785;
-	}
-
-	nav a.active:hover {
-		color: #fff;
-	}
-
 	/*****************************************
 	Home
 	******************************************/
@@ -332,20 +296,9 @@ BIG SCREENS
 		display: inline-block;
 	}
 
-	#period {
-		color: #da4040;
-	}
-
-	#name {
-		color: #da4040;
-	}
-
 	/*****************************************
 	Portfolio
 	******************************************/
-	.projects {
-		border-bottom: 1px solid #dddddd;
-	}
 
 	.thumbnail {
 		width: 55%;
@@ -364,22 +317,8 @@ BIG SCREENS
 		text-align: left;
 	}
 
-	.caption:hover {
-		color: #E16666;
-	}
-
 	#skillsList{
 	text-align: left;
-	}
-
-	#skills {
-		display: inline-block;
-		font-size: 1.5em;
-		background-color: #199785;
-		padding: 5px 10px;
-		margin-right: 5px;
-		color: #fff;
-		border-radius: 5%;
 	}
 
 	/*****************************************
@@ -407,28 +346,81 @@ BIG SCREENS
 	******************************************/
 	#businessCard {
 		width: 60%;
-		height: 400px;
-		border: 1px solid #dddddd;
+		height: 450px;
+		border: 1px solid #6e6e6e;
 		margin: 0 auto;
-		background-color: #ddd;
+		background-color: #fff;
+		box-shadow: 10px 10px 10px 0px rgba(198,198,198,0.75);
 	}
 
-	/*****************************************
-	Footer
-	******************************************/
-	footer {
-		text-align: center;
+	#businessCard .logo {
+		border-bottom: 5px solid white;
+		width: 35%;
+		margin-top: 45%;
+		margin-left: 125px;
+		padding-bottom: 20px;
+		font-size: 3em;
+	}
+
+	#leftHalf {
+		width: 50%;
+		height: 100%;
+		float: left;
+		background-color: #000;
+	}
+
+	#rightHalf {
+		width: 50%;
+		height: 100%;
+		float: right;
+		background-color: #fff;
+	}
+
+	#contactMe {
+		padding-top: 20px;
+  	padding-left: 50px;
+  	padding-bottom: 20px;
+  	font-size: 2em;
+  	background-color: #da4040;
+  	color: #fff;
+	}
+
+	#contact .R{
 		color: #fff;
-		width: 100%;
-		background-color: #464646;
-	  background-image: url(../img/dark-mosaic.png);
-	  padding: 15px 0 5px;
 	}
 
-	.social-icon {
-	  width: 20px;
-	  height: 20px;
-	  padding: 0 10px;
+	.contact-info {
+  list-style: none;
+  margin-top: 50px;
+  margin-left: 50px;
+  width: 30%;
 	}
 
+	.contact-info a {
+  display: block;
+  min-height: 20px;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  padding: 0 0 0 30px;
+  margin: 0 0 10px;
+  color: #000;
+  font-weight: bold;
+	}
+
+	.contact-info li.facebook a {
+  background-image: url('../img/social-media/facebook.png');
+	}
+
+	.contact-info li.linkedin a {
+  background-image: url('../img/social-media/linkedin.png');
+	}
+
+	.contact-info li.twitter a {
+  background-image: url('../img/social-media/twitter.png');
+	}
+
+	.contact-info li.email a {
+  background-image: url('../img/social-media/email.png');
+	}
 }
+

@@ -193,7 +193,7 @@ mainApp.controller('aboutController', function($scope) {
       position: new google.maps.LatLng($scope.locations[i].lat, $scope.locations[i].lng),
       map: $scope.map,
       title: $scope.locations[i].title,
-      icon: 'img/green-icon.png'
+      icon: 'img/red-icon.png'
     });
     markers.push(marker);
   }
