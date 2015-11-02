@@ -44,7 +44,7 @@ mainApp.directive("scroll", function ($window) {
   var toTop = document.getElementById('toTop');
   return function(scope, element, attrs) {
     angular.element($window).bind("scroll", function() {
-      if (this.pageYOffset <= home.offsetTop+2) {
+      if (this.pageYOffset >= home.offsetTop+50 || this.pageYOffset <= home.offsetTop) {
         $window.location.hash = '/';
       }
       if (this.pageYOffset <= portfolio.offsetTop) {
@@ -75,37 +75,43 @@ mainApp.controller('portfolioController', function($scope){
       'title': 'Feed Reader Testing',
       'imageLoc': 'img/project6.png',
       'description': 'The goal of this project was to learn about testing with JavaScript. I wrote a number of test suites using Jasmine in order to test the business logic, event handling, and DOM manipulation of an existing application.',
-      'link': 'https://github.com/rtang91/Udacity-P6-Feed-Reader-Testing' 
+      'link': 'https://github.com/rtang91/Udacity-P6-Feed-Reader-Testing',
+      'skills': ['Jasmine', 'JavaScript', 'Testing'] 
     },
     {
       'title': 'Health tracker app',
       'imageLoc': 'img/health-tracker.png',
       'description': 'This project helped me learn Backbone.js by creating a single page app that tracks calorie intake by searching for food items and adding them to a list. The nutritional information is provided using the Nutritionix API.',
-      'link': 'https://github.com/rtang91/Udacity-P5-2-Health-Tracker-Project' 
+      'link': 'https://github.com/rtang91/Udacity-P5-2-Health-Tracker-Project',
+      'skills': ['Backbone', 'jQuery', 'Underscore']  
     },
     {
       'title': 'Neighborhood Map',
       'imageLoc': 'img/neighborhood-map.png',
       'description': "The main objective of this project was to help me learn knockout as well as how to use asynchronous API's. I used the google maps API to display some of my favorite places to visit in Ottawa, ON.",
-      'link': 'https://github.com/rtang91/Udacity-P5-1-Neighborhood-Map-Project'
+      'link': 'https://github.com/rtang91/Udacity-P5-1-Neighborhood-Map-Project',
+      'skills': ['Knockout', 'jQuery', 'Google Maps API', 'AJAX'] 
     },
     {
       'title': 'Website Optimization',
       'imageLoc': 'img/project4.png',
       'description': 'The main goal of this project was to learn about the critical rendering path and how to make websites run smoothly. I was given a website which I optimized to achieve a PageSpeed Insights score that was above 90, and I optimized one of the pages to run consistently at 60 frames per second.',
-      'link': 'https://github.com/rtang91/Udacity-P4-Website-Optimization'
+      'link': 'https://github.com/rtang91/Udacity-P4-Website-Optimization',
+      'skills': ['HTML/CSS', 'jQuery', 'Google Maps API', 'AJAX'] 
     },
     {
       'title': 'Arcade Game Clone',
       'imageLoc': 'img/arcade-game.png',
       'description': 'The purpose of this project was to gain experience in object-oriented JavaScript by adding players and enemies to a game resembling the classic arcade game Frogger.',
-      'link': 'https://github.com/rtang91/Udacity-P3-1-Arcade-Game'
+      'link': 'https://github.com/rtang91/Udacity-P3-1-Arcade-Game',
+      'skills': ['HTML/CSS', 'jQuery', 'Google Maps API', 'AJAX'] 
     },
     {
       'title': 'Interactive Resume',
       'imageLoc': 'img/project2.png',
       'description': 'The goal of this project was to create a resume that uses JavaScript to dynamically fill in content. This project allowed me to practice working with JavaScript objects and helped me understand how jQuery can shorten the time it takes to make a website.',
-      'link': 'https://github.com/rtang91/Udacity-P2-Resume'
+      'link': 'https://github.com/rtang91/Udacity-P2-Resume',
+      'skills': ['HTML/CSS', 'jQuery', 'Google Maps API', 'AJAX'] 
     }
   ];
 });
@@ -186,7 +192,8 @@ mainApp.controller('aboutController', function($scope) {
     var marker = new google.maps.Marker ({
       position: new google.maps.LatLng($scope.locations[i].lat, $scope.locations[i].lng),
       map: $scope.map,
-      title: $scope.locations[i].title
+      title: $scope.locations[i].title,
+      icon: 'img/green-icon.png'
     });
     markers.push(marker);
   }

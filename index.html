@@ -24,9 +24,12 @@
 			</nav>
 		</header>
 		<div id="wrapper">
-			<div id="home">
-				<div id="intro">
-					<p>Hi and welcome to my porfolio!</p>
+			<div id="home" class="row">
+				<div class="container">
+					<div id="intro">
+						<p class="topLine">My name is</p> <p class="topLine" id="name">Ryan</p>
+						<p>Welcome to my portfolio<span id="period">.</span></p>
+					</div>
 				</div>
 			</div>
 			<div id="portfolio" ng-controller="portfolioController">
@@ -37,6 +40,9 @@
 			        	<img class="thumbnail" ng-src="{{project.imageLoc}}" alt="">
 			        	<a ng-href="{{project.link}}"><h3 class="caption">{{project.title}}</h3></a>
 			        	<p class="projectDescription">{{project.description}}</p>
+			        	<ul>
+			        		<li id="skills" ng-repeat="skill in project.skills">{{skill}}</li>
+			        	</ul>
 			        </div>
 		    		</li>
 				</ul>

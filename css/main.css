@@ -1,22 +1,20 @@
-/*****************************************
-BIG SCREENS
-******************************************/
 
 /*****************************************
 General
 ******************************************/
- .row {
+.row {
  	width: 100%;
 }
 
- .container {
+.container {
 	max-width: 1200px;
+	width: 100%;
 	margin: 0 auto;
 	overflow: auto;
 	padding: 150px 0;
 }
 
- #wrapper {
+#wrapper {
  	width: 100%;
 }
 
@@ -35,13 +33,14 @@ a {
 }
 
 #toTop {
-	width: 50px;
-	height: 50px;
-	border: 2px solid black;
+	width: 60px;
+	height: 60px;
 	display: none;
 	position: fixed;
-	right: 25px;
+	right: 50px;
 	top: 25px;
+	background-image: url('../img/up-arrow-icon.png');
+	background-size: 60px 60px;
 }
 /*****************************************
 Header
@@ -107,13 +106,28 @@ nav a.active:hover {
 Home
 ******************************************/
 #home {
-	padding: 300px 0;
-	background-color: #000;
-	background-image: url(../img/dark-mosaic.png);
+	padding: 250px 0;
+	background-image: url(../img/startup-bw.jpg);
+	background-size: cover;
 }
 
 #intro {
-	text-align: center;
+	color: #fff;
+	font-weight: 900;
+	font-size: 2.5em;
+	line-height: 2em;
+}
+
+.topLine {
+	display: inline-block;
+}
+
+#period {
+	color: #da4040;
+}
+
+#name {
+	color: #da4040;
 }
 
 /*****************************************
@@ -133,17 +147,28 @@ Portfolio
 	width: 45%;
 	float: right;
 	font-size: 1.5em;
+	margin-bottom: 40px;
 }
 
 .caption {
 	font-size: 2em;
 	margin-bottom: 30px;
 	font-weight: 900;
-	color: #199785;
+	color: #da4040;
 }
 
 .caption:hover {
-	color: #14786A;
+	color: #E16666;
+}
+
+#skills {
+	display: inline-block;
+	font-size: 1.5em;
+	background-color: #199785;
+	padding: 5px 10px;
+	margin-right: 5px;
+	color: #fff;
+	border-radius: 5%;
 }
 
 /*****************************************
@@ -163,7 +188,7 @@ About
 
 #mapDiv {
 	width: 100%;
-	height: 575px;
+	height: 600px;
 }
 
 /*****************************************
@@ -193,4 +218,229 @@ footer {
   width: 20px;
   height: 20px;
   padding: 0 10px;
+}
+
+/**********************************************************************************************
+BIG SCREENS
+**********************************************************************************************/
+
+@media and screen (min-width: 1200px) {
+	.row {
+	 	width: 100%;
+	}
+
+	.container {
+		max-width: 1200px;
+		width: 100%;
+		margin: 0 auto;
+		overflow: auto;
+		padding: 150px 0;
+	}
+
+	#wrapper {
+	 	width: 100%;
+	}
+
+	body {
+		font-family: 'Lato', sans-serif;
+		line-height: 2em;
+		color: #424242;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	.current {
+		background-color: #000;
+	}
+
+	#toTop {
+		width: 60px;
+		height: 60px;
+		display: none;
+		position: fixed;
+		right: 50px;
+		top: 25px;
+		background-image: url('../img/up-arrow-icon.png');
+		background-size: 60px 60px;
+	}
+	/*****************************************
+	Header
+	******************************************/
+	header {
+		width: 100%;
+		text-transform: uppercase;
+	}
+
+	nav {
+		float: right;
+		width: 45%;
+		margin-right: 5%;
+		text-align: right;
+		margin-top: 30px;
+	}
+
+	nav ul {
+		list-style: none;
+	}
+
+	nav li {
+		display: inline-block;
+	}
+
+	nav a {
+		font-size: 1.3em;
+	  font-weight: 900;
+	  padding: 10px 15px;
+	  color: #fff;
+	  border-radius: 5%;
+	}
+
+	nav a:visited, nav a.active {
+		color: #fff;
+	}
+
+
+	nav a.active {
+		background-color: #199785;
+	}
+
+	nav a:hover {
+	  color: #199785;
+	}
+
+	nav a.active:hover {
+		color: #fff;
+	}
+
+	#logo {
+		font-family: 'Lobster', cursive;
+		font-weight: bold;
+		color: #fff;
+		float: left;
+		width: 45%;
+		margin-top: 30px;
+		margin-left: 5%;
+		font-size: 2.5em;
+	}
+
+	/*****************************************
+	Home
+	******************************************/
+	#home {
+		padding: 250px 0;
+		background-image: url(../img/startup-bw.jpg);
+		background-size: cover;
+	}
+
+	#intro {
+		color: #fff;
+		font-weight: 900;
+		font-size: 2.5em;
+		line-height: 2em;
+	}
+
+	.topLine {
+		display: inline-block;
+	}
+
+	#period {
+		color: #da4040;
+	}
+
+	#name {
+		color: #da4040;
+	}
+
+	/*****************************************
+	Portfolio
+	******************************************/
+	.projects {
+		border-bottom: 1px solid #dddddd;
+	}
+
+	.thumbnail {
+		width: 55%;
+		float: left;
+		clear: right;
+	}
+
+	.projectDescription {
+		width: 45%;
+		float: right;
+		font-size: 1.5em;
+		margin-bottom: 40px;
+	}
+
+	.caption {
+		font-size: 2em;
+		margin-bottom: 30px;
+		font-weight: 900;
+		color: #da4040;
+	}
+
+	.caption:hover {
+		color: #E16666;
+	}
+
+	#skills {
+		display: inline-block;
+		font-size: 1.5em;
+		background-color: #199785;
+		padding: 5px 10px;
+		margin-right: 5px;
+		color: #fff;
+		border-radius: 5%;
+	}
+
+	/*****************************************
+	About
+	******************************************/
+	#profile-photo {
+		width: 25%;
+		float: left;
+		border-radius: 100%;
+	}
+
+	#about p {
+		width: 70%;
+		float: right;
+		font-size: 1.5em;
+	}
+
+	#mapDiv {
+		width: 100%;
+		height: 600px;
+	}
+
+	/*****************************************
+	Contact
+	******************************************/
+	#businessCard {
+		width: 60%;
+		height: 400px;
+		border: 1px solid #dddddd;
+		margin: 0 auto;
+		background-color: #ddd;
+	}
+
+	/*****************************************
+	Footer
+	******************************************/
+	footer {
+		text-align: center;
+		color: #fff;
+		width: 100%;
+		background-color: #464646;
+	  background-image: url(../img/dark-mosaic.png);
+	  padding: 15px 0 5px;
+	}
+
+	.social-icon {
+	  width: 20px;
+	  height: 20px;
+	  padding: 0 10px;
+	}
+
 }
