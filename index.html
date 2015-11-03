@@ -39,11 +39,14 @@
 		    		<li ng-repeat="project in projects" class="row">
 		    			<div class="container projects">
 			        	<img class="thumbnail" ng-src="{{project.imageLoc}}" alt="">
-			        	<a ng-href="{{project.link}}"><h3 class="caption">{{project.title}}</h3></a>
-			        	<p class="projectDescription">{{project.description}}</p>
-			        	<ul id="skillsList">
-			        		<li id="skills" ng-repeat="skill in project.skills">{{skill}}</li>
-			        	</ul>
+			        	<div class="rightContainer">
+				        	<a ng-href="{{project.link}}"><h3 class="caption">{{project.title}}</h3></a>
+				        	<ul id="skillsList">
+				        		<li id="skills" ng-repeat="skill in project.skills">{{skill}}</li>
+				        	</ul>
+				        	<p class="projectDescription">{{project.description}}</p>
+				        	<div class="projectBtn"><a ng-href="{{project.link}}" class="projectLink">Check It Out</a></div>
+			        	</div>
 			        </div>
 		    		</li>
 				</ul>
@@ -61,13 +64,13 @@
 				<div class="container">
 					<div id="businessCard">
 						<div id="leftHalf">
-							<div class="logo">
+							<div class="logo" id="cardLogo">
 		      			<h1 class="R">R</h1> <h1 class="period">.</h1>
 	  					</div>
 						</div>
 						<div id="rightHalf">
-							<h1 id="contactMe">Contact Me</h1>
-							<ul class="contact-info">
+							<div id="contactMeContainer"><h1 id="contactMe">Contact Me</h1></div>
+							<ul class="contactInfo">
             		<li class="mail"><a target="_blank" href="mailto:rtang91@gmail.com">rtang91@gmail.com</a></li>
             		<li class="facebook"><a target="_blank" href="https://www.facebook.com/ryan.tang.91">@rtang91</a></li>
             		<li class="linkedin"><a target="_blank" href="https://ca.linkedin.com/in/ryantang1">Linkedin</a></li>

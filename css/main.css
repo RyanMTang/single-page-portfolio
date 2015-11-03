@@ -53,11 +53,10 @@ nav li {
 }
 
 nav a {
-	font-size: 1.3em;
   font-weight: 900;
   padding: 10px 15px;
   color: #fff;
-  border-radius: 5%;
+  border-radius: 5px;
 }
 
 nav a:visited, nav a.active {
@@ -70,7 +69,7 @@ nav a.active {
 }
 
 nav a:hover {
-  color: rgba(214,43,43,0.7);;
+  color: rgba(214,43,43,0.7);
 }
 
 nav a.active:hover {
@@ -104,7 +103,7 @@ nav a.active:hover {
 Home
 ******************************************/
 #home {
-	padding: 250px 0;
+	padding: 200px 0;
 	background-image: url(../img/startup-bw.jpg);
 	background-size: cover;
 }
@@ -112,8 +111,8 @@ Home
 #intro {
 	color: #fff;
 	font-weight: 900;
-	font-size: 2.5em;
-	line-height: 2em;
+	font-size: 1.7em;
+	line-height: 1.5em;
 }
 
 .topLine {
@@ -121,11 +120,11 @@ Home
 }
 
 .period {
-	color: #da4040;
+	color: #d62b2b;
 }
 
 #name {
-	color: #da4040;
+	color: #d62b2b;
 }
 
 /*****************************************
@@ -141,15 +140,14 @@ Portfolio
 
 .projectDescription {
 	width: 100%;
-	float: right;
-	font-size: 1.5em;
-	margin-bottom: 40px;
+	font-size: 1.1em;
+	margin-bottom: 20px;
 }
 
 .caption {
 	text-align: center;
-	font-size: 2em;
-	margin-bottom: 30px;
+	font-size: 1.7em;
+	margin-bottom: 10px;
 	font-weight: 900;
 	color: #6e6e6e;
 }
@@ -160,17 +158,38 @@ Portfolio
 
 #skillsList{
 	text-align: center;
+	margin-bottom: 10px;
 }
 
 #skills {
-	display: inline-block;
-	font-size: 1.5em;
-	background-color: rgba(214,43,43,0.7);
-	padding: 5px 10px;
+	display: inline;
+	font-size: 0.8em;
+	padding: 0 10px;
+	background-color: #199785;
 	margin-right: 5px;
-	margin-bottom: 5px;
 	color: #fff;
-	border-radius: 5%;
+	border-radius: 2px;
+	font-weight: bold;
+	text-transform: uppercase;
+	box-shadow: 2px 2px 5px 0 rgba(132,132,132,0.75);
+}
+
+.projectBtn {
+	text-align: center;
+}
+
+.projectLink {
+	padding: 5px 10px;
+	background-color: #d62b2b;
+	color: #fff;
+	border-radius: 2px;
+	text-transform: uppercase;
+	font-weight: bold;
+	box-shadow: 1px 1px 5px 0 rgba(132,132,132,0.5);
+}
+
+.projectLink:hover {
+	background-color: #da4040;
 }
 
 /*****************************************
@@ -185,17 +204,77 @@ About
 #about p {
 	width: 70%;
 	float: right;
-	font-size: 1.5em;
+	font-size: 1.2em;
 }
 
 #mapDiv {
 	width: 100%;
-	height: 350px;
+	height: 190px;
 }
 
 /*****************************************
 Contact
 ******************************************/
+	#businessCard {
+		box-shadow: 5px 5px 10px 0px rgba(132,132,132,0.75);
+		width: 85%;
+		margin: 0 auto;
+	}
+
+	#cardLogo {
+		display: none;
+	}
+
+	#contactMe {
+  	padding: 20px;
+  	font-size: 2em;
+  	background-color: #d62b2b;
+  	color: #fff;
+  	background-image: url(../img/az-subtle.png);
+	}
+
+	#contactMeContainer {
+		width: 100%;
+		text-align: center;
+	}
+
+	#contact .R{
+		color: #fff;
+	}
+
+	.contactInfo {
+  	list-style: none;
+  	margin-top: 10px;
+  	margin-left: 30px;
+  	width: 30%;
+	}
+
+	.contactInfo a {
+	  display: block;
+	  min-height: 20px;
+	  background-repeat: no-repeat;
+	  background-size: 20px 20px;
+	  padding: 0 0 0 30px;
+	  margin: 0 0 10px;
+	  font-weight: bold;
+	  color: #424242;
+	}
+
+	.contactInfo li.facebook a {
+  	background-image: url('../img/social-media/facebook.png');
+	}
+
+	.contactInfo li.linkedin a {
+  	background-image: url('../img/social-media/linkedin.png');
+	}
+
+	.contactInfo li.twitter a {
+  	background-image: url('../img/social-media/twitter.png');
+	}
+
+	.contactInfo li.email a {
+  	background-image: url('../img/social-media/email.png');
+	}
 
 /*****************************************
 Footer
@@ -216,16 +295,121 @@ footer {
 }
 
 /**********************************************************************************************
+MEDIUM SCREENS
+**********************************************************************************************/
+@media screen and (min-width: 600px) {
+	nav {
+		display: block;
+		width: 70%;
+		margin-right: 5%;
+	}
+
+	.logo {
+	float: left;
+	width: 20%;
+	}
+
+	#cardLogo {
+	display: block;
+}
+
+	/*****************************************
+	Contact
+	******************************************/
+	#businessCard {
+		width: 500px;
+		height: 300px;
+		margin: 0 auto;
+		background-color: #fff;
+		box-shadow: 5px 5px 10px 0px rgba(132,132,132,0.75);
+	}
+
+	#businessCard .logo {
+		border-bottom: 5px solid white;
+		width: 50%;
+		margin-top: 45%;
+		margin-left: 60px;
+		padding-bottom: 20px;
+		font-size: 2.5em;
+		text-align: center;
+	}
+
+	#leftHalf {
+		width: 50%;
+		height: 100%;
+		float: left;
+		background-color: #2c2c2c;
+		background-image: url(../img/grey.png);
+	}
+
+	#rightHalf {
+		width: 50%;
+		height: 100%;
+		float: right;
+		background-color: #fff;
+	}
+
+	#contactMe {
+  	padding: 20px;
+  	font-size: 2em;
+  	background-color: #d62b2b;
+  	color: #fff;
+  	background-image: url(../img/az-subtle.png);
+	}
+
+	#contactMeContainer {
+		width: 100%;
+		text-align: center;
+	}
+
+	#contact .R{
+		color: #fff;
+	}
+
+	.contactInfo {
+  list-style: none;
+  margin-top: 30px;
+  margin-left: 30px;
+  width: 30%;
+	}
+
+	.contactInfo a {
+  display: block;
+  min-height: 20px;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  padding: 0 0 0 30px;
+  margin: 0 0 10px;
+  font-weight: bold;
+  color: #424242;
+	}
+
+	.contactInfo li.facebook a {
+  background-image: url('../img/social-media/facebook.png');
+	}
+
+	.contactInfo li.linkedin a {
+  background-image: url('../img/social-media/linkedin.png');
+	}
+
+	.contactInfo li.twitter a {
+  background-image: url('../img/social-media/twitter.png');
+	}
+
+	.contactInfo li.email a {
+  background-image: url('../img/social-media/email.png');
+	}
+
+}
+
+/**********************************************************************************************
 BIG SCREENS
 **********************************************************************************************/
 
-@media screen and (min-width: 1400px) {
-	.row {
-	 	width: 100%;
-	}
+@media screen and (min-width: 1300px) {
 
 	.container {
-		max-width: 1200px;
+		max-width: 1000px;
 		width: 100%;
 		margin: 0 auto;
 		overflow: auto;
@@ -241,7 +425,7 @@ BIG SCREENS
 		height: 60px;
 		display: none;
 		position: fixed;
-		right: 50px;
+		right: 25px;
 		top: 25px;
 		background-image: url('../img/up-arrow-icon.png');
 		background-size: 60px 60px;
@@ -253,10 +437,6 @@ BIG SCREENS
 	/*****************************************
 	Header
 	******************************************/
-	header {
-		width: 100%;
-		text-transform: uppercase;
-	}
 
 	nav {
 		display: block;
@@ -267,33 +447,15 @@ BIG SCREENS
 		margin-top: 30px;
 	}
 
-	nav ul {
-		list-style: none;
-	}
-
-	nav li {
-		display: inline-block;
-	}
-
-	nav a {
-		font-size: 1.3em;
-	  font-weight: 900;
-	  padding: 10px 15px;
-	  color: #fff;
-	  border-radius: 5%;
-	}
-
 	/*****************************************
 	Home
 	******************************************/
-	#home {
-		padding: 250px 0;
-		background-image: url(../img/startup-bw.jpg);
-		background-size: cover;
-	}
-
 	.topLine {
 		display: inline-block;
+	}
+
+	#intro {
+	font-size: 2.5em;
 	}
 
 	/*****************************************
@@ -304,13 +466,20 @@ BIG SCREENS
 		width: 55%;
 		float: left;
 		clear: right;
+		margin-right: 1%;
+	}
+
+	.rightContainer {
+		width: 44%;
+		float: right;
+	}
+
+	.projectBtn {
+		text-align: left;
 	}
 
 	.projectDescription {
-		width: 45%;
-		float: right;
-		font-size: 1.5em;
-		margin-bottom: 40px;
+		font-size: 1.1em;
 	}
 
 	.caption {
@@ -333,12 +502,11 @@ BIG SCREENS
 	#about p {
 		width: 70%;
 		float: right;
-		font-size: 1.5em;
 	}
 
 	#mapDiv {
 		width: 100%;
-		height: 600px;
+		height: 500px;
 	}
 
 	/*****************************************
@@ -346,27 +514,28 @@ BIG SCREENS
 	******************************************/
 	#businessCard {
 		width: 60%;
-		height: 450px;
-		border: 1px solid #6e6e6e;
+		height: 350px;
 		margin: 0 auto;
 		background-color: #fff;
-		box-shadow: 10px 10px 10px 0px rgba(198,198,198,0.75);
+		box-shadow: 5px 5px 10px 0px rgba(132,132,132,0.75);
 	}
 
 	#businessCard .logo {
 		border-bottom: 5px solid white;
 		width: 35%;
 		margin-top: 45%;
-		margin-left: 125px;
+		margin-left: 100px;
 		padding-bottom: 20px;
-		font-size: 3em;
+		font-size: 2.5em;
+		text-align: center;
 	}
 
 	#leftHalf {
 		width: 50%;
 		height: 100%;
 		float: left;
-		background-color: #000;
+		background-color: #2c2c2c;
+		background-image: url(../img/grey.png);
 	}
 
 	#rightHalf {
@@ -377,49 +546,53 @@ BIG SCREENS
 	}
 
 	#contactMe {
-		padding-top: 20px;
-  	padding-left: 50px;
-  	padding-bottom: 20px;
+  	padding: 20px;
   	font-size: 2em;
-  	background-color: #da4040;
+  	background-color: #d62b2b;
   	color: #fff;
+  	background-image: url(../img/az-subtle.png);
+	}
+
+	#contactMeContainer {
+		width: 100%;
+		text-align: center;
 	}
 
 	#contact .R{
 		color: #fff;
 	}
 
-	.contact-info {
+	.contactInfo {
   list-style: none;
   margin-top: 50px;
   margin-left: 50px;
   width: 30%;
 	}
 
-	.contact-info a {
+	.contactInfo a {
   display: block;
   min-height: 20px;
   background-repeat: no-repeat;
   background-size: 20px 20px;
   padding: 0 0 0 30px;
   margin: 0 0 10px;
-  color: #000;
   font-weight: bold;
+  color: #424242;
 	}
 
-	.contact-info li.facebook a {
+	.contactInfo li.facebook a {
   background-image: url('../img/social-media/facebook.png');
 	}
 
-	.contact-info li.linkedin a {
+	.contactInfo li.linkedin a {
   background-image: url('../img/social-media/linkedin.png');
 	}
 
-	.contact-info li.twitter a {
+	.contactInfo li.twitter a {
   background-image: url('../img/social-media/twitter.png');
 	}
 
-	.contact-info li.email a {
+	.contactInfo li.email a {
   background-image: url('../img/social-media/email.png');
 	}
 }
