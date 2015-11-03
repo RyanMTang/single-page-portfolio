@@ -196,13 +196,14 @@ Portfolio
 About
 ******************************************/
 #profile-photo {
-	width: 25%;
+	width: 0;
 	float: left;
 	border-radius: 100%;
+	display: none;
 }
 
 #about p {
-	width: 70%;
+	width: 95%;
 	float: right;
 	font-size: 1.2em;
 }
@@ -210,6 +211,14 @@ About
 #mapDiv {
 	width: 100%;
 	height: 190px;
+}
+
+#about .caption {
+	color: #d62b2b;
+	font-family: 'Pacifico', cursive;
+	width: 70%;
+	font-size: 2em;
+	margin: 0 auto 20px;
 }
 
 /*****************************************
@@ -253,8 +262,8 @@ Contact
 	  display: block;
 	  min-height: 20px;
 	  background-repeat: no-repeat;
-	  background-size: 20px 20px;
-	  padding: 0 0 0 30px;
+	  background-size: 25px 25px;
+	  padding: 0 0 0 35px;
 	  margin: 0 0 10px;
 	  font-weight: bold;
 	  color: #424242;
@@ -268,12 +277,12 @@ Contact
   	background-image: url('../img/social-media/linkedin.png');
 	}
 
-	.contactInfo li.twitter a {
-  	background-image: url('../img/social-media/twitter.png');
-	}
-
 	.contactInfo li.email a {
   	background-image: url('../img/social-media/email.png');
+	}
+
+	.contactInfo li.github a {
+  	background-image: url('../img/social-media/github.png');
 	}
 
 /*****************************************
@@ -298,20 +307,48 @@ footer {
 MEDIUM SCREENS
 **********************************************************************************************/
 @media screen and (min-width: 600px) {
+
+	/*****************************************
+	General
+	******************************************/
+
 	nav {
 		display: block;
 		width: 70%;
 		margin-right: 5%;
 	}
 
-	.logo {
-	float: left;
-	width: 20%;
+	/*****************************************
+	Portfolio
+	******************************************/
+
+	#skillsList{
+	width: 100%;
+	}
+	
+	/*****************************************
+	About
+	******************************************/
+	#profile-photo {
+		width: 25%;
+		float: left;
+		border-radius: 100%;
+		display: block;
 	}
 
-	#cardLogo {
-	display: block;
-}
+	#about .caption {
+		float: right;
+		text-align: left;
+	}
+
+	#about p {
+		width: 70%;
+		float: right;
+	}
+
+	#about {
+		text-align: left;
+	}
 
 	/*****************************************
 	Contact
@@ -325,7 +362,7 @@ MEDIUM SCREENS
 	}
 
 	#businessCard .logo {
-		border-bottom: 5px solid white;
+		border-bottom: 5px solid black;
 		width: 50%;
 		margin-top: 45%;
 		margin-left: 60px;
@@ -333,6 +370,15 @@ MEDIUM SCREENS
 		font-size: 2.5em;
 		text-align: center;
 	}
+
+	.logo {
+	float: left;
+	width: 20%;
+	}
+
+	#cardLogo {
+	display: block;
+	}	
 
 	#leftHalf {
 		width: 50%;
@@ -373,33 +419,6 @@ MEDIUM SCREENS
   width: 30%;
 	}
 
-	.contactInfo a {
-  display: block;
-  min-height: 20px;
-  background-repeat: no-repeat;
-  background-size: 20px 20px;
-  padding: 0 0 0 30px;
-  margin: 0 0 10px;
-  font-weight: bold;
-  color: #424242;
-	}
-
-	.contactInfo li.facebook a {
-  background-image: url('../img/social-media/facebook.png');
-	}
-
-	.contactInfo li.linkedin a {
-  background-image: url('../img/social-media/linkedin.png');
-	}
-
-	.contactInfo li.twitter a {
-  background-image: url('../img/social-media/twitter.png');
-	}
-
-	.contactInfo li.email a {
-  background-image: url('../img/social-media/email.png');
-	}
-
 }
 
 /**********************************************************************************************
@@ -414,10 +433,6 @@ BIG SCREENS
 		margin: 0 auto;
 		overflow: auto;
 		padding: 150px 0;
-	}
-
-	#wrapper {
-	 	width: 100%;
 	}
 
 	#toTop {
@@ -440,19 +455,13 @@ BIG SCREENS
 
 	nav {
 		display: block;
-		float: right;
 		width: 45%;
-		margin-right: 5%;
 		text-align: right;
-		margin-top: 30px;
 	}
 
 	/*****************************************
 	Home
 	******************************************/
-	.topLine {
-		display: inline-block;
-	}
 
 	#intro {
 	font-size: 2.5em;
@@ -493,16 +502,6 @@ BIG SCREENS
 	/*****************************************
 	About
 	******************************************/
-	#profile-photo {
-		width: 25%;
-		float: left;
-		border-radius: 100%;
-	}
-
-	#about p {
-		width: 70%;
-		float: right;
-	}
 
 	#mapDiv {
 		width: 100%;
@@ -521,7 +520,6 @@ BIG SCREENS
 	}
 
 	#businessCard .logo {
-		border-bottom: 5px solid white;
 		width: 35%;
 		margin-top: 45%;
 		margin-left: 100px;
@@ -555,7 +553,6 @@ BIG SCREENS
 
 	#contactMeContainer {
 		width: 100%;
-		text-align: center;
 	}
 
 	#contact .R{
@@ -566,34 +563,8 @@ BIG SCREENS
   list-style: none;
   margin-top: 50px;
   margin-left: 50px;
-  width: 30%;
+
 	}
 
-	.contactInfo a {
-  display: block;
-  min-height: 20px;
-  background-repeat: no-repeat;
-  background-size: 20px 20px;
-  padding: 0 0 0 30px;
-  margin: 0 0 10px;
-  font-weight: bold;
-  color: #424242;
-	}
-
-	.contactInfo li.facebook a {
-  background-image: url('../img/social-media/facebook.png');
-	}
-
-	.contactInfo li.linkedin a {
-  background-image: url('../img/social-media/linkedin.png');
-	}
-
-	.contactInfo li.twitter a {
-  background-image: url('../img/social-media/twitter.png');
-	}
-
-	.contactInfo li.email a {
-  background-image: url('../img/social-media/email.png');
-	}
 }
 

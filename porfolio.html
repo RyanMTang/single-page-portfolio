@@ -1,0 +1,18 @@
+<div id="portfolio" ng-controller="portfolioController">
+	<div id="toTop" scroll-to-item scroll-to="#home"></div>
+	<ul id="gallery">
+		<li ng-repeat="project in projects" class="row">
+			<div class="container projects">
+		   	<img class="thumbnail" ng-src="{{project.imageLoc}}" alt="">
+		   	<div class="rightContainer">
+		      <a ng-href="{{project.link}}"><h3 class="caption">{{project.title}}</h3></a>
+		      <ul id="skillsList">
+		      	<li id="skills" ng-repeat="skill in project.skills">{{skill}}</li>
+		      </ul>
+		      <p class="projectDescription">{{project.description}}</p>
+		     	<div class="projectBtn"><a ng-href="{{project.link}}" class="projectLink">Check It Out</a></div>
+		 		</div>
+		  </div>
+		</li>
+	</ul>
+</div>
