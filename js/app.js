@@ -34,6 +34,14 @@ mainApp.directive('scrollToItem', function($route, $location) {
           });                                                                              
       }                                                                                    
   };
+});
+
+mainApp.directive('portfolio', function($scope) {
+  return {
+    restrict: 'E',
+    templateUrl: 'portfolio.html',
+    controller: 'portfolioController'
+  };
 });  
 
 mainApp.directive("scroll", function ($window) {
@@ -83,35 +91,35 @@ mainApp.controller('portfolioController', function($scope){
       'imageLoc': 'img/health-tracker.png',
       'description': 'This project helped me learn Backbone.js by creating a single page app that tracks calorie intake by searching for food items and adding them to a list. The nutritional information is provided using the Nutritionix API.',
       'link': 'https://github.com/rtang91/Udacity-P5-2-Health-Tracker-Project',
-      'skills': ['Backbone', 'jQuery', 'Underscore']  
+      'skills': ['Backbone', 'JavaScript', 'HTML/CSS', 'AJAX']  
     },
     {
       'title': 'Neighborhood Map',
       'imageLoc': 'img/neighborhood-map.png',
       'description': "The main objective of this project was to help me learn knockout as well as how to use asynchronous API's. I used the google maps API to display some of my favorite places to visit in Ottawa, ON.",
       'link': 'https://github.com/rtang91/Udacity-P5-1-Neighborhood-Map-Project',
-      'skills': ['Knockout', 'jQuery', 'Google Maps API', 'AJAX'] 
+      'skills': ['Knockout', 'JavaScript', 'HTML/CSS', 'AJAX'] 
     },
     {
       'title': 'Website Optimization',
       'imageLoc': 'img/project4.png',
-      'description': 'The main goal of this project was to learn about the critical rendering path and how to make websites run smoothly. I was given a website which I optimized to achieve a PageSpeed Insights score that was above 90, and I optimized one of the pages to run consistently at 60 frames per second.',
+      'description': 'The main goal of this project was to learn about the critical rendering path and how to make websites run smoothly with the help of Chrome Developer Tools. I was given a website which I optimized to achieve a PageSpeed Insights score that was above 90, and I optimized one of the pages to run consistently at 60 frames per second.',
       'link': 'https://github.com/rtang91/Udacity-P4-Website-Optimization',
-      'skills': ['HTML/CSS', 'jQuery', 'Google Maps API', 'AJAX'] 
+      'skills': ['Critial Rendering Path', '60 FPS Rendering', 'HTML/CSS'] 
     },
     {
       'title': 'Arcade Game Clone',
       'imageLoc': 'img/arcade-game.png',
       'description': 'The purpose of this project was to gain experience in object-oriented JavaScript by adding players and enemies to a game resembling the classic arcade game Frogger.',
       'link': 'https://github.com/rtang91/Udacity-P3-1-Arcade-Game',
-      'skills': ['HTML/CSS', 'jQuery', 'Google Maps API', 'AJAX'] 
+      'skills': ['Object-Oriented Programming', 'JavaScript', 'HTML5'] 
     },
     {
       'title': 'Interactive Resume',
       'imageLoc': 'img/project2.png',
       'description': 'The goal of this project was to create a resume that uses JavaScript to dynamically fill in content. This project allowed me to practice working with JavaScript objects and helped me understand how jQuery can shorten the time it takes to make a website.',
       'link': 'https://github.com/rtang91/Udacity-P2-Resume',
-      'skills': ['HTML/CSS', 'jQuery', 'Google Maps API', 'AJAX'] 
+      'skills': ['HTML/CSS', 'JavaScript', 'jQuery'] 
     }
   ];
 });
