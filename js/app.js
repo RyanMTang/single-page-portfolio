@@ -36,13 +36,29 @@ mainApp.directive('scrollToItem', function($route, $location) {
   };
 });
 
-mainApp.directive('portfolio', function($scope) {
+mainApp.directive('portfolio', function() {
   return {
     restrict: 'E',
     templateUrl: 'portfolio.html',
     controller: 'portfolioController'
   };
-});  
+});
+
+mainApp.directive('about', function() {
+  return {
+    restrict: 'E',
+    templateUrl: 'about.html',
+    controller: 'aboutController'
+  };
+});
+
+mainApp.directive('contact', function() {
+  return {
+    restrict: 'E',
+    templateUrl: 'contact.html',
+    controller: 'contactController'
+  };
+});    
 
 mainApp.directive("scroll", function ($window) {
   var home = document.getElementById('home');
@@ -51,7 +67,7 @@ mainApp.directive("scroll", function ($window) {
   var contact = document.getElementById('contact');
   var toTop = document.getElementById('toTop');
   return function(scope, element, attrs) {
-    angular.element($window).bind("scroll", function() {
+    angular.element($window).bind("scroll", function($scope) {
       if (this.pageYOffset >= home.offsetTop+50 || this.pageYOffset <= home.offsetTop) {
         $window.location.hash = '/';
       }
