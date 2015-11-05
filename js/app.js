@@ -60,12 +60,11 @@ mainApp.directive('contact', function() {
   };
 });    
 
-mainApp.directive("scroll", function ($window) {
+mainApp.directive("scroll", function ($window, $rootScope) {
   var home = document.getElementById('home');
   var portfolio = document.getElementById('portfolio');
   var about = document.getElementById('about');
   var contact = document.getElementById('contact');
-  var toTop = document.getElementById('toTop');
   return function(scope, element, attrs) {
     angular.element($window).bind("scroll", function($scope) {
       if (this.pageYOffset >= home.offsetTop+50 || this.pageYOffset <= home.offsetTop) {
@@ -94,6 +93,7 @@ mainApp.controller('mainController', function($scope, $route, $location) {
 });
 
 mainApp.controller('portfolioController', function($scope){
+
   $scope.projects = [
     {
       'title': 'Feed Reader Testing',
@@ -228,4 +228,7 @@ mainApp.controller('aboutController', function($scope) {
   }
 
   $scope.map.fitBounds(bounds);
+});
+
+mainApp.controller('contactController', function($scope) {
 });
