@@ -1,6 +1,7 @@
 var mainApp = angular.module('mainApp', ['ngRoute']);
 
 mainApp.config(function($routeProvider) {
+
   $routeProvider
 
   .when('/', {
@@ -19,7 +20,9 @@ mainApp.config(function($routeProvider) {
     activeTab: 'contact'
   });
 
+
 });
+
  
 mainApp.directive('scrollToItem', function($route, $location) {                                                      
   return {                                                                                 
@@ -33,14 +36,6 @@ mainApp.directive('scrollToItem', function($route, $location) {
               $('body').animate({scrollTop: $(scope.scrollTo).offset().top }, "slow");
           });                                                                              
       }                                                                                    
-  };
-});
-
-mainApp.directive('home', function() {
-  return {
-    restrict: 'E',
-    templateUrl: 'home.html',
-    controller: 'homeController'
   };
 });
 
@@ -74,6 +69,7 @@ mainApp.directive("scroll", function ($window, $rootScope) {
   var about = document.getElementById('about');
   var contact = document.getElementById('contact');
   return function(scope, element, attrs) {
+    $window.location.hash = '/';
     angular.element($window).bind("scroll", function($scope) {
       if (this.pageYOffset >= home.offsetTop+100 || this.pageYOffset <= home.offsetTop) {
         $window.location.hash = '/';
@@ -153,7 +149,7 @@ mainApp.controller('portfolioController', function($scope){
 
 mainApp.controller('aboutController', function($scope) {
   $scope.about = {
-    'paragraph': "Hi, my name is Ryan Tang and I like building websites and breaking down complex problems. When I'm not building things, I enjoy working out, playing basketball, and reading. When I was growing up, I moved alot. Take a look at the map below to see all the places where I've lived or worked.",
+    'paragraph': "Hi, my name is Ryan Tang and I like building websites and solving complex problems. When I'm not building things, I enjoy working out, playing basketball, and reading. When I was growing up, I moved around alot. Take a look at the map below to see all the places where I've lived or worked.",
     'alt': 'Photograph of Ryan Tang',
     'imageLoc': 'img/profile.jpg'
   }

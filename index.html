@@ -12,11 +12,19 @@
 	<body ng-controller="mainController" scroll>
 		<header>
 			<div class="logo">
-				<a href="#/">
+				<a href="#/" scroll-to-item scroll-to="home">
 		      <h1 class="R">R</h1> <h1 class="period">.</h1>
 		    </a>
 	  	</div>
 			<nav scroll>
+				<ul>
+					<li><a href="#/" ng-class="{active: $route.current.activeTab == 'home'}">Home</a></li>
+          <li><a href="#/portfolio" scroll-to-item scroll-to="#portfolio" ng-class="{active: $route.current.activeTab == 'portfolio'}">Portfolio</a></li>
+          <li><a href="#/about" scroll-to-item scroll-to="#about" ng-class="{active: $route.current.activeTab == 'about'}">About</a></li>
+          <li><a href="#/contact" scroll-to-item scroll-to="#contact" ng-class="{active: $route.current.activeTab == 'contact'}">Contact</a></li>
+				</ul>
+			</nav>
+			<nav scroll id="mobileNav">
 				<ul>
 					<li><a href="#/" ng-class="{active: $route.current.activeTab == 'home'}">Home</a></li>
           <li><a href="#/portfolio" scroll-to-item scroll-to="#portfolio" ng-class="{active: $route.current.activeTab == 'portfolio'}">Portfolio</a></li>
