@@ -36,6 +36,14 @@ mainApp.directive('scrollToItem', function($route, $location) {
   };
 });
 
+mainApp.directive('home', function() {
+  return {
+    restrict: 'E',
+    templateUrl: 'home.html',
+    controller: 'homeController'
+  };
+});
+
 mainApp.directive('portfolio', function() {
   return {
     restrict: 'E',
@@ -67,7 +75,7 @@ mainApp.directive("scroll", function ($window, $rootScope) {
   var contact = document.getElementById('contact');
   return function(scope, element, attrs) {
     angular.element($window).bind("scroll", function($scope) {
-      if (this.pageYOffset >= home.offsetTop+50 || this.pageYOffset <= home.offsetTop) {
+      if (this.pageYOffset >= home.offsetTop+100 || this.pageYOffset <= home.offsetTop) {
         $window.location.hash = '/';
       }
       if (this.pageYOffset <= portfolio.offsetTop) {
@@ -90,6 +98,9 @@ mainApp.directive("scroll", function ($window, $rootScope) {
 
 mainApp.controller('mainController', function($scope, $route, $location) {
   $scope.$route = $route;
+});
+
+mainApp.controller('homeController', function($scope) {
 });
 
 mainApp.controller('portfolioController', function($scope){
@@ -142,10 +153,9 @@ mainApp.controller('portfolioController', function($scope){
 
 mainApp.controller('aboutController', function($scope) {
   $scope.about = {
-    'paragraph': "Hi, my name is Ryan Tang and this is my design portfolio where I share some of my most recent work. When I'm not building things, I enjoy working out, playing basketball, and reading.",
+    'paragraph': "Hi, my name is Ryan Tang and I like building websites and breaking down complex problems. When I'm not building things, I enjoy working out, playing basketball, and reading. When I was growing up, I moved alot. Take a look at the map below to see all the places where I've lived or worked.",
     'alt': 'Photograph of Ryan Tang',
-    'imageLoc': 'img/profile.jpg',
-    'mapHeading': "Places I've Worked and Lived"
+    'imageLoc': 'img/profile.jpg'
   }
 
   var styleArray = [{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffffff"},{"lightness":0},{"saturation":-97}]}];
