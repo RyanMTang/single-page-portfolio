@@ -116,6 +116,10 @@ nav a.active:hover {
 	background-color: rgba(214,43,43,0.7)
 }
 
+#mobileNav a:hover {
+	color: #fff;
+}
+
 /*****************************************
 Home
 ******************************************/
